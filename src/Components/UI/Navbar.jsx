@@ -227,7 +227,6 @@ const navigate = useNavigate();
                       <span>Dashboard</span>
                     </div>
                     
-<<<<<<< HEAD
                     */}
                     <Link to={"/"}
                       className="flex items-center space-x-3 px-6 py-3 text-gray-700 hover:bg-gray-50 transition-colors cursor-pointer"
@@ -235,15 +234,6 @@ const navigate = useNavigate();
                       <Home className="w-4 h-4" />
                       <span>Return Home</span>
                     </Link> 
-=======
-                    <div
-                      className="flex items-center space-x-3 px-6 py-3 text-gray-700 hover:bg-gray-50 transition-colors cursor-pointer"
-                      onClick={() => setDropdownOpen(false)}
-                    >
-                      <Settings className="w-4 h-4" />
-                      <span>Account Settings</span>
-                    </div> */}
->>>>>>> 6c54cdae47aa08f8cc458253617e22eab927ee23
 
                     <div className="border-t border-gray-200 mt-2 pt-2">
                       <button

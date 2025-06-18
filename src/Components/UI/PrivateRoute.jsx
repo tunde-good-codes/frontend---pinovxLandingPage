@@ -5,10 +5,6 @@ import Loader from './Loader';
 
 const PrivateRoute = () => {
   const { user, loading } = useContext(AuthContext);
-<<<<<<< HEAD
-=======
-  console.log(user);
->>>>>>> 6c54cdae47aa08f8cc458253617e22eab927ee23
 
   if (loading) {
     return <Loader />;

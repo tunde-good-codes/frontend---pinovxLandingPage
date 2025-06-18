@@ -11,11 +11,7 @@ export default function KYCVerification() {
 
   // Function to fetch a new access token from your backend
   const getNewAccessToken = async () => {
-<<<<<<< HEAD
     const userToken = localStorage.getItem('token') || sessionStorage.getItem('token');
-=======
-    const userToken = localStorage.getItem('token');
->>>>>>> 6c54cdae47aa08f8cc458253617e22eab927ee23
     if (!userToken) {
       setShowLoginModal(true);
       setLoading(false);
@@ -152,23 +148,14 @@ export default function KYCVerification() {
       sdkInstanceRef.current = sdk;
       setLoading(false);
     } catch (error) {
-<<<<<<< HEAD
       console.error(error);
       setLoading(false);
       toast.error(` ${error.message || error}`);
-=======
-      console.error('KYC setup error:', error);
-      setLoading(false);
-      toast.error(`KYC Setup Error: ${error.message || error}`);
->>>>>>> 6c54cdae47aa08f8cc458253617e22eab927ee23
     }
   };
 
   useEffect(() => {
-<<<<<<< HEAD
     getNewAccessToken();
-=======
->>>>>>> 6c54cdae47aa08f8cc458253617e22eab927ee23
     launchWebSdk();
 
     // Cleanup on unmount

@@ -27,10 +27,7 @@ const RegisterForm = () => {
       setUser(googleLogedIn);
       localStorage.setItem('user', JSON.stringify(googleLogedIn));
       localStorage.setItem('token', googleLogedIn.token);
-<<<<<<< HEAD
       sessionStorage.setItem('token', googleLogedIn.token);
-=======
->>>>>>> 6c54cdae47aa08f8cc458253617e22eab927ee23
       api.defaults.headers.common['Authorization'] = `Bearer ${googleLogedIn.token}`;
       navigate(googleLogedIn.role === 'admin' ? '/admin' : '/dashboard');
       toast.success('Google login successful! Redirecting...');
@@ -85,20 +82,12 @@ const RegisterForm = () => {
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
   };
-<<<<<<< HEAD
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
     if (!validate()) return;
 
-=======
-const handleSubmit = async (e) => {
-  e.preventDefault();
-  if (!validate()) return;
-
-  try {
->>>>>>> 6c54cdae47aa08f8cc458253617e22eab927ee23
     const result = await register({
       firstName: formData.firstName,
       lastName: formData.lastName,
@@ -106,7 +95,6 @@ const handleSubmit = async (e) => {
       password: formData.password
     });
 
-<<<<<<< HEAD
     if (result.success) {
       if (result.requiresVerification) {
         toast.success(result.message || 'Registration successful! Please check your email for verification.');
@@ -118,27 +106,6 @@ const handleSubmit = async (e) => {
       }
     }
   };
-=======
-    if (result?.success) {
-      toast.success(result.message || 'Registration successful!');
-      
-      if (result.requiresVerification) {
-        // For email verification flow
-        navigate('/', { 
-          state: { email: formData.email } 
-        });
-      } else {
-        // For immediate login
-        navigate(result.data.role === 'admin' ? '/admin' : '/dashboard');
-      }
-    } else {
-      toast.error(result?.message || 'Registration failed');
-    }
-  } catch (error) {
-    toast.error(error.response?.data?.message || 'An error occurred');
-  }
-};
->>>>>>> 6c54cdae47aa08f8cc458253617e22eab927ee23
 
 
 

@@ -21,10 +21,6 @@ const UserData = () => {
   const { user } = useContext(AuthContext);
   const [kycData, setKycData] = useState(null);
   const [loading, setLoading] = useState(true);
-<<<<<<< HEAD
-=======
-  console.log(kycData)
->>>>>>> 6c54cdae47aa08f8cc458253617e22eab927ee23
 
   // Fetch KYC data
   useEffect(() => {
