@@ -12,6 +12,10 @@ import PrivateRoute from './Components/UI/PrivateRoute';
 import AdminRoute from './Components/UI/AdminRoute';
 import NotFound from './Components/UI/NotFound';
 import { AuthProvider } from './Components/contexts/AuthContext';
+<<<<<<< HEAD
+=======
+import { ThemeProvider } from './Components/contexts/ThemeContext';
+>>>>>>> 6c54cdae47aa08f8cc458253617e22eab927ee23
 import Home from './Components/Home';
 import Navbar from './Components/Navbar';
 import Footer from './Components/Footer';
@@ -21,6 +25,7 @@ import OrderTable from './Components/OrderTable';
 
 // Define a component that checks the location and conditionally renders Navbar
 function NavbarCondition() {
+<<<<<<< HEAD
   const location = useLocation();
   const isDashboardOrAdmin = location.pathname.includes('/dashboard') || location.pathname.includes('/admin');
 
@@ -31,16 +36,41 @@ function NavbarCondition() {
 function FooterCondition() {
   const location = useLocation();
   const isDashboardOrAdmin = location.pathname.includes('/dashboard') || location.pathname.includes('/admin');
+=======
+  const location = useLocation();  // Use location hook to get current URL path
+
+  // Check if the current URL is related to the dashboard or admin routes
+  const isDashboardOrAdmin = location.pathname.includes('/dashboard') || location.pathname.includes('/admin');
+
+  // Conditionally render Navbar
+  return !isDashboardOrAdmin ? <AuthProvider>  <Navbar />  </AuthProvider>: null;
+}
+
+function FooterCondition() {
+  const location = useLocation();  // Use location hook to get current URL path
+
+  // Check if the current URL is related to the dashboard or admin routes
+  const isDashboardOrAdmin = location.pathname.includes('/dashboard') || location.pathname.includes('/admin');
+
+  // Conditionally render Navbar
+>>>>>>> 6c54cdae47aa08f8cc458253617e22eab927ee23
   return !isDashboardOrAdmin ? <Footer /> : null;
 }
 
 function App() {
+<<<<<<< HEAD
 
   
+=======
+>>>>>>> 6c54cdae47aa08f8cc458253617e22eab927ee23
   return (
     <Router>
       <ToastContainer position="top-right" autoClose={3000} />
         <GoogleOAuthProvider clientId={import.meta.env.VITE_GOOGLE_CLIENT_ID}>
+<<<<<<< HEAD
+=======
+      <ThemeProvider>
+>>>>>>> 6c54cdae47aa08f8cc458253617e22eab927ee23
         <AuthProvider>
           <div className="min-h-screen">
             <NavbarCondition />
@@ -70,6 +100,10 @@ function App() {
             <FooterCondition />
           </div>
         </AuthProvider>
+<<<<<<< HEAD
+=======
+      </ThemeProvider>
+>>>>>>> 6c54cdae47aa08f8cc458253617e22eab927ee23
         </GoogleOAuthProvider>
     </Router>
   );

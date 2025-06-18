@@ -21,7 +21,10 @@ const LoginForm = () => {
       setUser(googleLogedIn);
       localStorage.setItem('user', JSON.stringify(googleLogedIn));
       localStorage.setItem('token', googleLogedIn.token);
+<<<<<<< HEAD
       sessionStorage.setItem('token', googleLogedIn.token);
+=======
+>>>>>>> 6c54cdae47aa08f8cc458253617e22eab927ee23
       api.defaults.headers.common['Authorization'] = `Bearer ${googleLogedIn.token}`;
       navigate(googleLogedIn.role === 'admin' ? '/admin' : '/dashboard');
       toast.success('Google login successful! Redirecting...');

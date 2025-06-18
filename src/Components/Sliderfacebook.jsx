@@ -82,6 +82,10 @@ export default function Section8() {
               slidesPerView: 1, // Show 1 slide on mobile
               centeredSlides: true, // Center the single slide
               spaceBetween: 10, // Space between slides
+<<<<<<< HEAD
+=======
+                centeredSlides: true, // Center the single slide
+>>>>>>> 6c54cdae47aa08f8cc458253617e22eab927ee23
             },
             400: {
               slidesPerView: 1.3, // Show 1.3 slides on small mobile screens
